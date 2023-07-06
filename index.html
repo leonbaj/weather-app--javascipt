@@ -7,6 +7,26 @@
     <title>Document</title>
     <link rel=" stylesheet" href="weatherApp.css"/>
 </head>
+<!-- Body will hold container (box where this text and info are being displayed) Weather info will be written as text. and it will prompt to
+    input name of the city in which one desires too look at the weather for. This app will use a weather API that will be labeled here() to get 
+    all the required info on weather prediction. 
+-->
 <body>
+    <div class="container">
+        <div class="app-title">
+            <p>Weather Info</p>
+            <input
+            id ='search'
+            type ='text'
+            placeholder="Enter the city"
+            autocomplete="off" />
+        </div>
+        <div class="temperature-value">
+            <p>- * <span>C</span></p>
+        </div>
+        <div class="temperature-description">
+            <p>-</p>
+        </div>
+    </div>
 </body>
 </html>

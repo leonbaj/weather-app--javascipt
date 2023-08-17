@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
     <link rel=" stylesheet" href="weatherApp.css"/>
 </head>
 <!-- Body will hold container (box where this text and info are being displayed) Weather info will be written as text. and it will prompt to
@@ -16,17 +16,35 @@
         <div class="app-title">
             <p>Weather Info</p>
             <input
-            id ='search'
-            type ='text'
-            placeholder="Enter the city"
+            id ="search"
+            type ="text"
+            placeholder="Enter city"
             autocomplete="off" />
+            <div class="location-icon">
+        <img src="Icons/location.png" alt="Current location">
+            </div>
         </div>
-        <div class="temperature-value">
-            <p>- * <span>C</span></p>
-        </div>
-        <div class="temperature-description">
-            <p>-</p>
-        </div>
+        <div class ="notification"></div>
+        <div class ="weather-container">
+            <div class ="weather-icon">
+                <img src="Icons/unkown.png" alt="Unkown picture">
+            </div>
+            <div class="temperature-value">
+                <p>- * <span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p>-</p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>    
     </div>
+    <!--
+    <div class="relative">
+        <img src="" alt="">
+    </div>
+-->
+    <script src="weatherApp.js"></script>
 </body>
 </html>

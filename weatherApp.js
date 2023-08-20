@@ -53,7 +53,11 @@ function setPostion(position){
     longitude = position.coords.longitude;
     getWeather(latitude, longitude);
 }
-
+// function that gets invoked by the parameters above as well. Displays error if we get a error somewhere in the logic. 
+function showError(error){
+    notificationElement.style.display = 'block';
+    notificationElement.innerHTML = `<p> ${error.message} </p>`
+}
 
 
 function getSearchWeather(city){

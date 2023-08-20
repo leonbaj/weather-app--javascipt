@@ -39,12 +39,19 @@ const key='38dd1e492100cfa77eb9e6388905a087';
 // we do this by invoking navigator (browser) and another api called geolocation. if we are able to we will run navigator to get current position. if not just send error back to page
 // that it does not support it
 if("geolocation" in navigator){
-    navigator.geolocation.getCurrentPosition(setPostion, shoError)
+    navigator.geolocation.getCurrentPosition(setPostion, showError);
 }
 else {
-    notificationElement.style.display = 'block'
-    notificationElement.innerHTML = '<p> Browser doesnt support geolocation </p>'
+    notificationElement.style.display = 'block';
+    notificationElement.innerHTML = '<p> Browser doesnt support geolocation </p>';
 
+}
+//function that gets invoked by the paremeters above, 
+function setPostion(position){
+    //assigns coordinates to latitude and longitude, also calls for getWeather Function which takes lat and long as parameters. 
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    getWeather(latitude, longitude);
 }
 
 

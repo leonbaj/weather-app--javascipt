@@ -53,6 +53,15 @@ function setPostion(position){
     longitude = position.coords.longitude;
     getWeather(latitude, longitude);
 }
+
+//Added an event listener to fire if the user clicks on the location Icon. which will retrieve their geolocation and once again this will invoke api call to display information 
+//based on their geolocation
+locationIcon.addEventListener("click", function(event){
+    console.log("hey");
+    getWeather(latitude, longitude); //function yet to be created
+})
+
+
 // function that gets invoked by the parameters above as well. Displays error if we get a error somewhere in the logic. 
 function showError(error){
     notificationElement.style.display = 'block';

@@ -19,11 +19,36 @@ input.addEventListener("keyup", function(event) {
         event.preventDefault();
         
         //city is assigned value of the input search
-        city=input.value
-        //Display City
-        console.log(city)
+        city=input.value;
+        //Function to Engage with WeatherAPI and parameter of what was entered
+        getSearchWeather(city);
+        //Displays City entered.
+        console.log(city);
     }
 
 })
 
+// initialzing more variables needed API key, how our weather is formated etc.
+const weather={};
+weather.temperature = { unit: "celsuis"};
 
+const KELVIN = 273;
+
+const key='38dd1e492100cfa77eb9e6388905a087';
+// checking if geolocation is available. basically Here is were the browser will prompt user if they wish for the applicaiton in which is running the script, to use there geolocation
+// we do this by invoking navigator (browser) and another api called geolocation. if we are able to we will run navigator to get current position. if not just send error back to page
+// that it does not support it
+if("geolocation" in navigator){
+    navigator.geolocation.getCurrentPosition(setPostion, shoError)
+}
+else {
+    notificationElement.style.display = 'block'
+    notificationElement.innerHTML = '<p> Browser doesnt support geolocation </p>'
+
+}
+
+
+
+function getSearchWeather(city){
+    //api call here to get information about city weather
+}

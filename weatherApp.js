@@ -2,7 +2,7 @@
 
 const iconElement = document.querySelector(".weather-icon")
 const locationIcon = document.querySelector(".location-icon")
-const tempElement = document.querySelector(".tmeperature-value p")
+const tempElement = document.querySelector(".temperature-value p")
 const descElement = document.querySelector(".temperature-descritpion p")
 const locationElement = document.querySelector(".location p")
 const notificationElement = document.querySelector(".notification")
@@ -88,10 +88,10 @@ function getSearchWeather(city){
         weather.city = data.name;
         weather.country = data.sys.county;
     })
-    //still need to create method to displayweather. 
-    //.then(function(){
-    //  displayWeather()
-    //})
+    //chaining again to display weather at that point
+    .then(function(){
+      displayWeather()
+    })
 }
 
 //similiar method to Above but this is invoked when we get the latitude and longitude from applicaiton via user clicking on location icon. 
@@ -112,9 +112,16 @@ function getWeather(latitude, longitude){
         weather.city = data.name;
         weather.country = data.sys.county;
     })
-    //still need to create method to displayweather. 
-    //.then(function(){
-    //  displayWeather()
-    //})
+    //chaining again, to display weather at that point
+    .then(function(){
+        displayWeather()
+    })
     
+}
+//function to display our weather
+function displayWeather(){
+    iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+    tempElement.innerHTML = `${weather.temperature.value} *<span>C<span>`;
+    descElement.innerHTML = weather.description;
+    locationElement.innerHTML = `${weather.city}, ${weather.country}`
 }

@@ -93,3 +93,28 @@ function getSearchWeather(city){
     //  displayWeather()
     //})
 }
+
+//similiar method to Above but this is invoked when we get the latitude and longitude from applicaiton via user clicking on location icon. 
+function getWeather(latitude, longitude){
+    let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&long=${longitude}&appid=${key}`
+    //fetch method begins fetching resources from the given source(url, network etc.) returns a promise which is fulfilled once the response is available.
+    fetch(api)
+    // Attaches callbacks for the resolution of the Promise
+    .then(function (response) {
+        let data =response.json(); 
+        return data;
+    })
+    // chaining callbacks for the resolution of promise, Assiging values needed to display on application
+    .then(function(data){
+        weather.temperature.value = Math.floor(data.main.temp -KELVIN);
+        weather.description = data.weather[0].description;
+        weather.iconId = data.weather[0].icon;
+        weather.city = data.name;
+        weather.country = data.sys.county;
+    })
+    //still need to create method to displayweather. 
+    //.then(function(){
+    //  displayWeather()
+    //})
+    
+}

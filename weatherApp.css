@@ -84,6 +84,8 @@ styling for container class: where information will be prompted to input and dis
 
 }
 .weather-icon img{
+    width: 150px;
+    height: 150px;
     display: block;
     margin: 0 auto;
 
@@ -123,7 +125,8 @@ styling for container class: where information will be prompted to input and dis
     color: #293251;
     font-size: 0.5em;
 }
-.temperature-discription p{
+.temperature-description p{
+    border-radius: 10px 10px 0 0;
     padding: 8px;
     margin: 0;
     color: #293251;
@@ -139,9 +142,4 @@ styling for container class: where information will be prompted to input and dis
     text-align: center;
     font-size: 0.8em;
 
-}
-div.relative{
-    position: absolute;
-    top: 600px;
-    right: 120px;
 }
